@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_064705) do
+ActiveRecord::Schema.define(version: 2020_02_24_075853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "disburse_rules", force: :cascade do |t|
+    t.decimal "min_amount", precision: 8, scale: 2, null: false
+    t.decimal "max_amount", precision: 8, scale: 2, null: false
+    t.decimal "percentage", precision: 5, scale: 2, null: false
+  end
 
   create_table "merchants", force: :cascade do |t|
     t.string "name", null: false

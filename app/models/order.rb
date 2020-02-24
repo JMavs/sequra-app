@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
-  has_one :merchant
-  has_one :shopper
+  belongs_to :merchant
+  belongs_to :shopper
   validates :merchant, presence: true
   validates :shopper, presence: true
   validates :amount, presence: true

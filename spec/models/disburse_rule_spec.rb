@@ -10,4 +10,10 @@ RSpec.describe DisburseRule, type: :model do
                             max_amount: 49.99,
                             percentage: 1)).to be_valid
   end
+
+  it "is valid with valid attributesi and unlimited max amount" do
+    expect(DisburseRule.new(min_amount: 0.01,
+                            max_amount: nil,
+                            percentage: 1)).to be_valid
+  end
 end

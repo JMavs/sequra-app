@@ -3,22 +3,22 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## Requirements
+- Postgres
+- Ruby
+- Ruby on Rails
 
-* Ruby version
+## Setup
 
-* System dependencies
+Copy the CSV files inside the tmp folder of the project.
 
-* Configuration
+Exec on your terminal:
+```sh
+bundle install
+SEQURA_IMPORT_DIR=tmp rails db:create db:migrate db:seeds
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run the server
+```sh
+rails s
+```
